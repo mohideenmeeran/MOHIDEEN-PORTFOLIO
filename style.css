@@ -1,0 +1,237 @@
+/* 1. Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Nav Bar */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #0a192f;
+    height: 70px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 50px;
+    z-index: 1000;
+}
+
+/* நேவ்பாரில் இருக்கும் லோகோ மட்டும் */
+.navbar img {
+    height: 75px;         /* லோகோவின் உயரம் பழையபடி இருக்கும் */
+    width: auto;
+    object-fit: contain;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    filter: brightness(0) invert(1);
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00adb5;
+}
+
+/* 3. Hero Section (விவரங்கள் இடதுபுறமும், போட்டோ வலதுபுறமும் நேராக வர) */
+.hero-desc {
+    display: flex;
+    flex-direction: row;       /* பக்கம்பக்கமாக வைக்கும் */
+    align-items: center;       /* செங்குத்தாக ஒரே நேர்க்கோட்டில் வைக்கும் */
+    justify-content: space-between; /* இடது மற்றும் வலது ஓரங்களில் கச்சிதமாகப் பிரிக்கும் */
+    max-width: 1100px;         /* லேஅவுட் ரொம்ப விரிவடையாமல் தடுக்க */
+    margin: 140px auto 60px auto; /* மேலே Navbar-க்கு கீழே நல்ல ஸ்பேஸ் தரும் */
+    padding: 0 20px;
+    min-height: 65vh;
+}
+
+/* டெக்ஸ்ட் பகுதி மட்டும் இடது பக்கம் நேராக இருக்க */
+.hero-text {
+    text-align: left;
+    color: #94A3B8;
+    flex: 1; /* டெக்ஸ்ட் தேவையான இடத்தை எடுத்துக்கொள்ளும் */
+}
+
+.hero-text h4 {
+    color: #00d2ff;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-transform: none;
+}
+
+.hero-text h1 {
+    font-size: 45px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    max-width: 550px;
+    line-height: 1.6;
+    color: #ccd6f6;
+    margin-top: 15px;
+    text-transform: none; /* தேவையில்லாமல் வரிகள் Capital ஆக மாறுவதைத் தடுக்க */
+}
+
+.hero-text span {
+    color: #00E5FF; 
+    font-weight: 600;
+}
+
+.hero-text strong {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* வலது பக்கம் இருக்கும் போட்டோவிற்கான கச்சிதமான வட்ட பாக்ஸ் */
+.profile-img {
+    width: 320px;              
+    height: 320px;             
+    flex-shrink: 0;            /* இமேஜ் பாக்ஸ் நசுங்குவதைத் தடுக்கும் */
+    border: 6px solid #ffffff;  
+    border-radius: 50%;        
+    overflow: hidden;          
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.4); 
+    margin-left: 40px;         /* டெக்ஸ்டுக்கும் போட்டோவுக்கும் நடுவில் கேப் */
+}
+
+/* வட்டத்திற்குள் இருக்கும் உங்களுடைய போட்டோ */
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* முகம் ஸ்ட்ரெட்ச் ஆகாமல் கச்சிதமாகப் பொருந்தும் */
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+/* skills */
+/* 5. Skills Section Styles */
+#skills {
+    margin-top: 80px;
+    padding: 60px 10% 100px 10%;
+    background-color: #00132D; /* மெயின் பேக்கிரவுண்ட் நிறம் */
+    color: #ffffff;
+    text-align: center;
+}
+
+.section-title {
+    color: #00d2ff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-box {
+    background-color: #020c1b; /* கார்டுகளின் டார்க் நிறம் */
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 210, 255, 0.1);
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* மவுஸை வைக்கும்போது கார்டு லைட்டாக க்ளோ ஆகும் எஃபெக்ட் */
+.skills-box:hover {
+    transform: translateY(-5px);
+    border-color: #00d2ff;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+}
+
+.skills-box h3 {
+    color: #00d2ff;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 210, 255, 0.2);
+    padding-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.skills-box ul {
+    list-style: none;
+}
+
+.skills-box ul li {
+    font-size: 16px;
+    color: #ccd6f6;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+    text-transform: none; /* எழுத்துக்கள் இயல்பாக இருக்க */
+}
+
+/* லிஸ்ட்டுக்கு முன்னாடி ஒரு சின்ன அழகான புள்ளி/அம்பு குறி வைக்க */
+.skills-box ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #00d2ff;
+}
+ .education-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .education-card {
+            background-color: white;
+            border: 2px solid #f2efef;
+            margin: 15px;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .education-card:hover {
+            cursor: pointer;
+            background-color: #EAF2FF;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .education-card h4 {
+            color: #2D3C59;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .education-card p {
+            color: #666;
+            font-size: 16px;
+            margin: 8px 0;
+        }
+
+        .education-card h5 {
+            color: orangered;
+            margin-top: 10px;
+            font-size: 14px;
+        }
